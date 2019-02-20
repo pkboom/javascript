@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <script>
+        // Async functions themselves return a Promise
+        async function doubleAndAdd(a, b) {
+            a = await doubleAfter1Sec(a);
+            b = await doubleAfter1Sec(b);
+
+            return a + b;
+        }
+
+        function doubleAfter1Sec(param) {
+            return new Promise (resolve => {
+                setTimeout(() => resolve(param * 2), 1000);
+            });
+        }
+
+        doubleAndAdd(1,2).then(console.log);
+
+        //////////////////////////////////////////////////
+
+        async function doubleAndAdd2(a, b) {
+            [a, b] = await Promise.all([doubleAfter1Sec(a), doubleAfter1Sec(b)]);
+
+            return a + b;
+        }
+
+        doubleAndAdd2(2, 2).then(console.log);
+    </script>
+</body>
+
+</html>
