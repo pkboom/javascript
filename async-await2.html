@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <script>
+        async function doubleAndAdd(param) {
+
+            a = await new Promise(resolve2 => {
+                setTimeout(() => resolve2(param * 2), 1000);
+            });
+            
+            return a;
+        }
+
+
+        doubleAndAdd(6).then(console.log);
+    </script>
+</body>
+
+</html>

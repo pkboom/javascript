@@ -12,6 +12,18 @@
 
     <script>
         // Async functions themselves return a Promise
+        async function double(param) {
+            // await invokes Promise closure and retrieve whatever resolve will get
+            a = await new Promise(resolve => {
+                setTimeout(() => resolve(param * 2), 1000);
+            });
+            
+            return a;
+        }
+
+        // whatever async returns will go to then
+        doubleAndAdd(6).then(console.log); // output 12
+        
         async function doubleAndAdd(a, b) {
             a = await doubleAfter1Sec(a);
             b = await doubleAfter1Sec(b);
@@ -24,6 +36,7 @@
                 setTimeout(() => resolve(param * 2), 1000);
             });
         }
+
 
         doubleAndAdd(1,2).then(console.log);
 
