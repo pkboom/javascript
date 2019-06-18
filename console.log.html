@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let data = [
+            { category: 'vegetable', name: 'tamoato', quantity: 4 },
+            { category: 'fruit', name: 'kiwi', quantity: 3 },
+            { category: 'fruit', name: 'strawberry', quantity: 9 },
+            { category: 'bread', name: 'beguette', quantity: 4 },
+        ];
+
+        console.table(data);
+
+        console.log(JSON.stringify(data, null, 2));
+
+        console.log('A message %cin white on red background.', 'color: white; background: red; font-style: italic')
+
+        console.assert(1 == 2, 'false condition')
+
+        console.dir(document.body)
+
+        console.log(someCode())
+
+        function someCode() {
+            let a = 2
+            let b = 5
+            console.trace()
+            return a * b
+        }
+    </script>
+</body>
+
+</html>
