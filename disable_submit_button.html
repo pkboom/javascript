@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .is-loading {
+        cursor: not-allowed;
+        background-color: gray;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 h-screen antialiased leading-none">
+    <form
+      action="/get"
+      onsubmit="submit.disabled = true; submit.classList.add('is-loading')"
+    >
+      <button name="submit">Submit</button>
+    </form>
+
+    // Enable form.submit in javascript
+    <form
+      action="/get"
+      onsubmit="submitButton.disabled = true; submitButton.classList.add('is-loading')"
+    >
+      <button name="submitButton">Submit</button>
+    </form>
+  </body>
+</html>
