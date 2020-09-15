@@ -8,17 +8,15 @@ export const Closable = {
       event.stopPropagation();
 
       let { exclude, handler } = binding.value;
-      let clickedOnExcludedElement = false;
+      let clickedOnHaha = false;
 
       exclude.forEach((refName) => {
-        if (!clickedOnExcludedElement) {
-          clickedOnExcludedElement = vnode.context.$refs[refName].contains(
-            event.target
-          );
+        if (!clickedOnHaha) {
+          clickedOnHaha = vnode.context.$refs[refName].contains(event.target);
         }
       });
 
-      if (!element.contains(event.target) && !clickedOnExcludedElement) {
+      if (!element.contains(event.target) && !clickedOnHaha) {
         vnode.context[handler]();
       }
     };
@@ -36,4 +34,5 @@ export const Closable = {
 // You can also make it available globally.
 Vue.directive("closable", Closable);
 
+// or
 import "./Closable";

@@ -14,6 +14,7 @@
   </head>
 
   <body class="bg-gray-100 h-screen antialiased leading-none">
+    // We have 2 forms.
     <form
       action="/get"
       onsubmit="submit.disabled = true; submit.classList.add('is-loading')"
@@ -21,7 +22,6 @@
       <button name="submit">Submit</button>
     </form>
 
-    // Enable form.submit in javascript
     <form
       action="/get"
       onsubmit="submitButton.disabled = true; submitButton.classList.add('is-loading')"

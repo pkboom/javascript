@@ -1,12 +1,12 @@
 <template>
   <div>
     <div>
-      <button ref="button" @click="showPopup = !showPopup">toggle</button>
+      <button ref="haha" @click="showPopup = !showPopup">toggle</button>
     </div>
     <div
       v-show="showPopup"
       v-closable="{
-        exclude: ['button'],
+        exclude: ['haha'],
         handler: 'onClose',
       }"
       class="bg-gray-500 m-10 h-20 w-20 text-white"
@@ -21,12 +21,12 @@ export default {
   data() {
     return {
       showPopup: false,
-    }
+    };
   },
   methods: {
     onClose() {
-      this.showPopup = false
+      this.showPopup = false;
     },
   },
-}
+};
 </script>
